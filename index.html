@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Google Icons CDN-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Materialize CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <title>BookMarker</title>
+</head>
+<body>
+  <div class="container">
+    <div class="center-align">
+
+      <div class="header">
+        <h1>BookMarker</h1>
+        <div>
+          Idea from Brad Traversy's video found <a target="_blank" href="https://www.youtube.com/watch?v=DIVfDZZeGxM">here</a>.
+          All code is my own.
+        </div>
+        <hr />
+      </div>
+
+      <h3>Fill out the form to create a bookmark</h3>
+
+      <div class="form">
+
+        <label for="name-input">BookMark Name</label>
+        <input placeholder="Name" id="name-input" type="text">
+
+        <label for="url-input">URL</label>
+        <input placeholder="URL" id="url-input" type="text">
+
+        <button class="btn waves-effect waves-light" id='create-bookmark-btn' type="submit" name="submitBookmark">
+          Submit<i class="material-icons right">send</i>
+        </button>
+      </div>
+
+      <div class="bookmarks">
+        <ul class="collection with-header" id="bookmark-list">
+          <li class="collection-header"><h3>Your BookMarks</h3></li>
+          <li class="collection-item valign-wrapper">
+              <a class="bookmark-link" href="http://twitter.com" target="_blank">Twitter</a>
+              <button class="secondary-content btn" onclick="deleteBookmark(this)">
+                <i class="small material-icons">delete</i>
+              </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript" src="scripts.js"></script>
+</body>
+</html>

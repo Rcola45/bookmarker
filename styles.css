@@ -1,0 +1,31 @@
+.form{
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.bookmarks{
+    width: 50%;
+    margin: 0 auto;
+}
+
+.collection-item>button{
+    float: right;
+    width: 10%;
+}
+
+.bookmark-link{
+    width: 90%;
+    font-size: 2em;
+    padding: 35px;
+}
+
+/* Overriding materialize padding */
+.collection .collection-item {
+    text-align: left;
+    padding: 0;
+}
+
+.collection.with-header .collection-item{
+    padding:0 10px 0 0;
+}
