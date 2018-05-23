@@ -38,7 +38,17 @@ function createBookmark(){
             url: urlValue
         };
 
+        let currentNames = bookmarks.map(bookmark => {
+            return bookmark.name;
+        });
+
+        if(currentNames.includes(nameValue)){
+            alert('This is a duplicate name');
+            return;
+        }
+
         bookmarks.unshift(newBookmark);
+
 
         localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
 
@@ -71,14 +81,9 @@ function updateBookmarkList(){
                 listElement.insertAdjacentHTML('beforeend',
                     "<li class='collection-item valign-wrapper'>" +
                         "<a class='bookmark-link' href='"+bookmarks[i].url+"' target='_blank'>"+bookmarks[i].name+"</a>" +
-                        "<button class='secondary-content btn' onclick='deleteBookmark(this)'>\n" +
+                        "<button class='secondary-content btn' onclick='deleteBookmark(this.parentNode)'>\n" +
                             "<i class='small material-icons'>delete</i>" +
                         "</button>");
-                // If not already in the rendered list
-                /**
-                 * TODO: Implement 'Remove Bookmark' function
-                 */
-                // listElement.appendChild()
             }
         }
     }
@@ -86,4 +91,20 @@ function updateBookmarkList(){
 
 function deleteBookmark(bookmark){
     // Delete a bookmark from storage and update list
+    let bookmarkName = bookmark.getElementsByTagName('a')[0].innerHTML;
+    let bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+    bookmarks.forEach((bookmark,i) => {
+        if(bookmark.name === bookmarkName){
+            bookmarks.splice(i, 1);
+            return;
+        }
+    });
+
+    // Send new array with deleted element to local storage
+    localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+
+    // Remove element from rendered list
+    document.getElementById('bookmark-list').removeChild(bookmark);
+
+
 }
