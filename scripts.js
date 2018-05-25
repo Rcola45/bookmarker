@@ -1,5 +1,8 @@
+
 document.getElementById('create-bookmark-btn').addEventListener('click', createBookmark);
 updateBookmarkList();
+
+
 function createBookmark(){
     let nameValue = document.getElementById('name-input').value;
     let urlValue = document.getElementById('url-input').value;

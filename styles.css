@@ -1,6 +1,5 @@
 .form{
     width: 50%;
-    margin: 0 auto;
     padding: 20px;
 }
 
@@ -28,4 +27,12 @@
 
 .collection.with-header .collection-item{
     padding:0 10px 0 0;
+}
+
+.collection-header>row{
+    vertical-align: middle;
+}
+
+#add-new-btn{
+    margin-top: 25px;
 }
